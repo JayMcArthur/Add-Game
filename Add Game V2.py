@@ -173,7 +173,7 @@ class Game:
             try:
                 self.goal = int(input("Points: "))
                 break
-            except:
+            except ValueError:
                 pass
         clear()
         print("Pick opponent:")
@@ -183,9 +183,9 @@ class Game:
         while True:
             try:
                 self.gameMode = int(input("Mode: "))
-                if -1 < self.gameMode and self.gameMode < 3: 
+                if -1 < self.gameMode < 3:
                     break
-            except:
+            except ValueError:
                 pass
         if self.gameMode == 2:
             self.bestPath = self.findSolution()
